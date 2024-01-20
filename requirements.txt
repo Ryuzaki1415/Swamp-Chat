@@ -1,0 +1,7 @@
+streamlit==1.22.0
+urllib3==1.26.6
+transformers==4.12.0
+huggingface-hub==0.0.15
+torch==1.10.0
+Pillow==8.4.0
+#install latest versions please
