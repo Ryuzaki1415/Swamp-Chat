@@ -49,7 +49,9 @@ art='''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀�
 ⠀⠀⠀⠀⠀⠀⠀⠀⠹⠇⠀⠀⠀⠀⠀⣸⣿⠠⢰⣶⠄⠀⠀⠀⢀⣀⠀⢠⠀⠀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣙⣿⠁⠀⠀⠀⠀⠀⣸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠇'''
 st.text(art)
 user_input = st.text_area("Enter Your Thoughts")
+instruction=' You are Shrek , the ogre. Answer the following question like Shrek :' +user_input
 st.write(f"Entered Prompt  :{user_input}")
+
 output=''
 def query(user_input):
     tokenizer = AutoTokenizer.from_pretrained(model_id, legacy=False)
@@ -59,7 +61,7 @@ def query(user_input):
     return output
 	
 if st.button('Generate'):
-        output = query(user_input)
+        output = query(instruction)
         st.write("Shrek says:")
         st.write(output[0]['generated_text'])
         output=''
